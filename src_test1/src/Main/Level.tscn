@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://s6888db86th7"]
+
+[ext_resource type="Script" uid="uid://kwxasct5f1mk" path="res://Main/Main.cs" id="1_gta3m"]
+
+[node name="Level" type="Node2D" unique_id=1903085700]
+position = Vector2(240, 420)
+script = ExtResource("1_gta3m")
+
+[node name="LaunchPosition" type="Marker2D" parent="." unique_id=1667197125]
+position = Vector2(-18, 284)
