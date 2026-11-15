@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://s6888db86th7"]
 
 [ext_resource type="Script" uid="uid://kwxasct5f1mk" path="res://Main/Main.cs" id="1_gta3m"]
-[ext_resource type="PackedScene" uid="uid://djr3wqqpjw47p" path="res://Main/perimiter.tscn" id="2_5trdm"]
+[ext_resource type="PackedScene" uid="uid://djr3wqqpjw47p" path="res://Main/perimeter.tscn" id="2_5trdm"]
 [ext_resource type="PackedScene" uid="uid://q5k7sep6ky34" path="res://player/player.tscn" id="2_player"]
 
 [node name="Level" type="Node2D" unique_id=1903085700]
 script = ExtResource("1_gta3m")
 
-[node name="Perimiter" parent="." unique_id=428894170 instance=ExtResource("2_5trdm")]
+[node name="Perimeter" parent="." unique_id=428894170 instance=ExtResource("2_5trdm")]
 
 [node name="Player" parent="." unique_id=1402329747 instance=ExtResource("2_player")]
 position = Vector2(240, 675)
