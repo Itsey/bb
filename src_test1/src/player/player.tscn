@@ -7,10 +7,11 @@
 position = Vector2(245, 655)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2094793925]
+[node name="Turret" type="Sprite2D" parent="." unique_id=2094793925]
 texture = ExtResource("2_i3pqv")
 hframes = 37
+frame = 18
 script = ExtResource("1_onrkg")
 
 [node name="LaunchPosition" type="Marker2D" parent="." unique_id=1779749506]
-position = Vector2(-23, 0)
+position = Vector2(0, -22)

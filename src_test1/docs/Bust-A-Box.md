@@ -36,24 +36,32 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 🎯Basic ball launch and bounce mechanics.  First release.
 
-#### B.1
+#### B.1 ✅
 
 * A turret is visible at the base of the game. ✅
 * A ball is launched and moves across the screen. ✅
 
 
 
-#### B.2
+#### B.2 ✅
 
 * The ball bounces off the side walls and top.  It exits the map through the bottom. ✅
 * Ball bounce implementation uses standard physics to appear to bounce naturally. ✅
 
 
 
-#### B.3
+#### B.3 ✅
 
-* The turret can be rotated to change the initial direction of the ball.
-* Ball launch is controlled on launch key or trigger action.
+* The turret can be rotated to change the initial direction of the ball.✅
+
+* Ball launch is controlled on launch key or trigger action, after direction set.✅
+
+  
+
+#### B.4 
+
+* Tidy up textures on wall & turret.
+* 🐞 SpriteSheet is not the way to go, redesign turret sprite to allow rotation.
 
 
 

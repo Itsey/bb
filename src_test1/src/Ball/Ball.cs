@@ -1,27 +1,36 @@
 using Godot;
+using Plisky.Diagnostics;
 
 public partial class Ball : CharacterBody2D {
+    protected Bilge b;
+    protected Controller ctrl;
+
     private const float Speed = 300.0f;
 
-    private Vector2 velocity = new Vector2(1, -1).Normalized() * Speed;
+    override public void _Ready() {
+        ctrl = GetNode<Controller>("/root/Controller");
+        b = ctrl.dt.CreateBilge("Ball");
+    }
+
+    public override void _Input(InputEvent @event) {
+        base._Input(@event);
+    }
 
     public override void _PhysicsProcess(double delta) {
-        //Vector2 velocity = new Vector2(1, -1);
 
-
-        var col = MoveAndCollide(velocity * (float)delta);
+        var col = MoveAndCollide(Velocity * (float)delta);
         if (col != null) {
 
             var hitWhat = col.GetCollider();
 
             if (hitWhat is Node n) {
-                GD.Print($"Collision with {n.Name}");
+                b.Info.Log($"Collision with {n.Name}");
                 if (n.Name == "baseline") {
                     this.QueueFree();
                 }
             }
 
-            velocity = velocity.Bounce(col.GetNormal());
+            Velocity = Velocity.Bounce(col.GetNormal());
         }
     }
 }

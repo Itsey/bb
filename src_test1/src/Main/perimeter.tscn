@@ -1,46 +1,62 @@
 [gd_scene format=3 uid="uid://djr3wqqpjw47p"]
 
+[ext_resource type="Texture2D" uid="uid://c3kmomea80xkl" path="res://Main/wallTile248x.png" id="1_4j1q1"]
 [ext_resource type="Texture2D" uid="uid://dvio7q0d02itl" path="res://Main/wallTile50x.png" id="1_skaqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5x8"]
 size = Vector2(534, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erhsa"]
-size = Vector2(48, 643.625)
+size = Vector2(48, 656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5avn8"]
+size = Vector2(48, 664.6875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86usu"]
+size = Vector2(481, 20)
 
 [node name="Perimeter" type="Node2D" unique_id=428894170]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1306970067]
+[node name="perimeter" type="StaticBody2D" parent="." unique_id=1306970067]
+position = Vector2(0, 1)
 
-[node name="perimeter_top" type="Sprite2D" parent="StaticBody2D" unique_id=71439957]
+[node name="perimeter_top" type="Sprite2D" parent="perimeter" unique_id=71439957]
 texture_repeat = 2
 position = Vector2(236, 26)
-texture = ExtResource("1_skaqk")
+texture = ExtResource("1_4j1q1")
 region_enabled = true
-region_rect = Rect2(0, 0, 500, 50)
+region_rect = Rect2(0, 0, 480, 36)
 
-[node name="perimeter_right" type="Sprite2D" parent="StaticBody2D" unique_id=283858512]
+[node name="perimeter_right" type="Sprite2D" parent="perimeter" unique_id=283858512]
 texture_repeat = 2
-position = Vector2(456, 301)
+position = Vector2(456, 378.5)
+scale = Vector2(1, 1.31)
 texture = ExtResource("1_skaqk")
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 500)
 
-[node name="perimeter_left" type="Sprite2D" parent="StaticBody2D" unique_id=440155762]
+[node name="perimeter_left" type="Sprite2D" parent="perimeter" unique_id=440155762]
 texture_repeat = 2
-position = Vector2(28, 302)
-texture = ExtResource("1_skaqk")
+position = Vector2(28, 374)
+scale = Vector2(1.06, 1.328)
+texture = ExtResource("1_4j1q1")
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 500)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=557105982]
+[node name="per_top_collision" type="CollisionShape2D" parent="perimeter" unique_id=557105982]
 position = Vector2(242, 25)
 shape = SubResource("RectangleShape2D_ic5x8")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=694689754]
-position = Vector2(28, 371.8125)
+[node name="per_left_collision" type="CollisionShape2D" parent="perimeter" unique_id=694689754]
+position = Vector2(28, 374)
 shape = SubResource("RectangleShape2D_erhsa")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1523291560]
-position = Vector2(456, 364.125)
-shape = SubResource("RectangleShape2D_erhsa")
+[node name="per_right_collision" type="CollisionShape2D" parent="perimeter" unique_id=1523291560]
+position = Vector2(456, 374.65625)
+shape = SubResource("RectangleShape2D_5avn8")
+
+[node name="baseline" type="StaticBody2D" parent="." unique_id=1615807008]
+
+[node name="baseline_collision" type="CollisionShape2D" parent="baseline" unique_id=1640969008]
+position = Vector2(240.5, 719)
+shape = SubResource("RectangleShape2D_86usu")
