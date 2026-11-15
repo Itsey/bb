@@ -45,7 +45,7 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 #### B.2
 
-* The ball bounces off the side walls and top.  It exits the map through the bottom.
+* The ball bounces off the side walls and top.  It exits the map through the bottom. ✅
 * Ball bounce implementation uses standard physics to appear to bounce naturally. ✅
 
 

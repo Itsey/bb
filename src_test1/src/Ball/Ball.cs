@@ -11,7 +11,16 @@ public partial class Ball : CharacterBody2D {
 
         var col = MoveAndCollide(velocity * (float)delta);
         if (col != null) {
-            GD.Print("Collision with: " + col.GetCollider());
+
+            var hitWhat = col.GetCollider();
+
+            if (hitWhat is Node n) {
+                GD.Print($"Collision with {n.Name}");
+                if (n.Name == "baseline") {
+                    this.QueueFree();
+                }
+            }
+
             velocity = velocity.Bounce(col.GetNormal());
         }
     }
