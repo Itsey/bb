@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://djr3wqqpjw47p"]
+
+[ext_resource type="Texture2D" uid="uid://dvio7q0d02itl" path="res://Main/wallTile50x.png" id="1_skaqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5x8"]
+size = Vector2(534, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erhsa"]
+size = Vector2(48, 643.625)
+
+[node name="Perimiter" type="Node2D" unique_id=428894170]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1306970067]
+
+[node name="perimiter_top" type="Sprite2D" parent="StaticBody2D" unique_id=71439957]
+texture_repeat = 2
+position = Vector2(236, 26)
+texture = ExtResource("1_skaqk")
+region_enabled = true
+region_rect = Rect2(0, 0, 500, 50)
+
+[node name="perimiter_right" type="Sprite2D" parent="StaticBody2D" unique_id=283858512]
+texture_repeat = 2
+position = Vector2(456, 301)
+texture = ExtResource("1_skaqk")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 500)
+
+[node name="perimiter_left" type="Sprite2D" parent="StaticBody2D" unique_id=440155762]
+texture_repeat = 2
+position = Vector2(28, 302)
+texture = ExtResource("1_skaqk")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=557105982]
+position = Vector2(242, 25)
+shape = SubResource("RectangleShape2D_ic5x8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=694689754]
+position = Vector2(28, 371.8125)
+shape = SubResource("RectangleShape2D_erhsa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1523291560]
+position = Vector2(456, 364.125)
+shape = SubResource("RectangleShape2D_erhsa")

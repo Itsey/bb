@@ -25,7 +25,7 @@ A turret is at the base of a rectangular view, up the view there are blocks of v
 ## Artistic style
 
 ```
-Using a pixel art space theme, which has neon colours and a celearly futuristic look.
+Using a pixel art space theme, which has neon colours and a clearly futuristic look.
 ```
 
 
@@ -38,15 +38,15 @@ Using a pixel art space theme, which has neon colours and a celearly futuristic 
 
 #### B.1
 
-* A turret is visible at the base of the game.
-* A ball is launched and moves across the screen.
+* A turret is visible at the base of the game. ✅
+* A ball is launched and moves across the screen. ✅
 
 
 
 #### B.2
 
 * The ball bounces off the side walls and top.  It exits the map through the bottom.
-* Ball bounce implementation uses standard physics to appear to bounce naturally.
+* Ball bounce implementation uses standard physics to appear to bounce naturally. ✅
 
 
 
@@ -112,4 +112,4 @@ Using a pixel art space theme, which has neon colours and a celearly futuristic 
 
 ## Tennis
 
-## Volley
+## VolleyWe
