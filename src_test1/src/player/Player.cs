@@ -3,7 +3,7 @@ using Godot;
 public partial class Player : Sprite2D {
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
-        Texture = GD.Load<Texture2D>("res://player/spritecreate.png");
+        Texture = GD.Load<Texture2D>("res://player/SpriteCreate.png");
 
         Hframes = FrameCount;
         Vframes = 1;
