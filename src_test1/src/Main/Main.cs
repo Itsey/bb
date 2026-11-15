@@ -8,25 +8,18 @@ public partial class Main : Node2D {
         ballScene = ResourceLoader.Load<PackedScene>("res://Ball/ball.tscn");
     }
 
-    // public override void _UnhandledInput(InputEvent @event) {
-    //     base._UnhandledInput(@event);
+    public override void _UnhandledInput(InputEvent @event) {
+        base._UnhandledInput(@event);
 
-    //     if (@event.IsActionPressed("ui_launchBall")) {
-    //         GD.Print("yhup1");
-    //         FireBall();
-    //     } else {
-    //         GD.Print("nope1");
-    //     }
+        if (@event.IsActionPressed("ui_launchBall")) {
+            FireBall();
+        }
 
-    // }
+    }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta) {
 
-        if (Input.IsActionJustPressed("ui_launchBall")) {
-            FireBall();
-        } else {
 
-        }
     }
 
     private void FireBall() {
@@ -34,7 +27,7 @@ public partial class Main : Node2D {
         var ballInstance = ballScene.Instantiate<Ball>();
         AddChild(ballInstance);
 
-        var spawn = GetNode<Marker2D>("LaunchPosition");
+        var spawn = GetNode<Marker2D>("Player/LaunchPosition");
         ballInstance.GlobalPosition = spawn.GlobalPosition;
 
 

@@ -15,8 +15,6 @@ public partial class Player : Sprite2D {
     public override void _Process(double delta) {
     }
 
-
-
     private const int FrameCount = 37;
     private const float AngleStep = 5.0f;
 

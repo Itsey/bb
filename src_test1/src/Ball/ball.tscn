@@ -9,8 +9,9 @@
 script = ExtResource("1_65gad")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=874777205]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_ngrkv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1349834081]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_ic5x8")

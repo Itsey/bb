@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://s6888db86th7"]
 
 [ext_resource type="Script" uid="uid://kwxasct5f1mk" path="res://Main/Main.cs" id="1_gta3m"]
-[ext_resource type="PackedScene" path="res://player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://q5k7sep6ky34" path="res://player/player.tscn" id="2_player"]
 
 [node name="Level" type="Node2D" unique_id=1903085700]
 script = ExtResource("1_gta3m")
 
-[node name="LaunchPosition" type="Marker2D" parent="." unique_id=1667197125]
-position = Vector2(240, 640)
-
-[node name="Player" parent="." instance=ExtResource("2_player")]
+[node name="Player" parent="." unique_id=1402329747 instance=ExtResource("2_player")]
 position = Vector2(240, 675)
