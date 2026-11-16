@@ -30,6 +30,20 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 
 
+## Design Decisions
+
+🗺️ The ball should speed up if it has been in flight for more than a few seconds.  How long and how fast does that scale.
+
+🗺️ How will the blocks positioning be determined? random ? pseudo random ? manual ?
+
+🗺️ What are the game elements - how does one increase block strength and ball power
+
+🗺️ How is scoring kept
+
+🗺️ Lives how is lifetime management managed
+
+🗺️ Ugrade - tracer line, double barrels, backing blocks
+
 
 
 ## Beach
