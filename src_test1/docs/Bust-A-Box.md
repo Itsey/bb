@@ -74,8 +74,8 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 #### B.4 
 
-* Tidy up textures on wall & turret.
-* 🐞 SpriteSheet is not the way to go, redesign turret sprite to allow rotation.
+* Tidy up textures on wall & turret.  ❌ Deferred due to tooling issues.
+* 🐞 SpriteSheet is not the way to go, redesign turret sprite to allow rotation. ✅
 
 
 
@@ -83,7 +83,7 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 🎯 Blocks exist and can be destroyed.   Ball damage is 1 block strength is 1.
 
-#### C.1 
+#### C.1
 
 * Single block is placed on the screen, ball bounces off the block.
 
@@ -93,7 +93,7 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 #### C.3
 
-* Striking the block makes another block appear randomly.
+* Having all balls out of play makes another block / row of blocks appear
 * Block can only appear in a configurable top portion of the screen
 
 
