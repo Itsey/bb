@@ -28,6 +28,11 @@ public partial class Ball : CharacterBody2D {
                 if (n.Name == "baseline") {
                     this.QueueFree();
                 }
+                if (n.Name == "Box") {
+                    var box = n as Box;
+                    box.Hit(1);
+                    ctrl.BoxDestroyed();  // todo wrong loc
+                }
             }
 
             Velocity = Velocity.Bounce(col.GetNormal());

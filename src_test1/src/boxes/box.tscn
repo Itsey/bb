@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://daorqdw1iawvt"]
+
+[ext_resource type="Script" uid="uid://b8lhgik2uavq5" path="res://boxes/Box.cs" id="1_fxhmg"]
+[ext_resource type="Texture2D" uid="uid://cae7lywhqkxuy" path="res://Assets/wallTile248x.png" id="2_fxhmg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5x8"]
+size = Vector2(48, 36)
+
+[node name="Box" type="CharacterBody2D" unique_id=2124813915]
+script = ExtResource("1_fxhmg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=988889750]
+texture = ExtResource("2_fxhmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145506693]
+shape = SubResource("RectangleShape2D_ic5x8")

@@ -8,4 +8,7 @@
     <PackageReference Include="Plisky.Diagnostics" Version="3.2.5" />
     <PackageReference Include="Plisky.Listeners" Version="3.2.5" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="boxes\" />
+  </ItemGroup>
 </Project>

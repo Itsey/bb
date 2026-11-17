@@ -1,13 +1,18 @@
 using Godot;
 using Plisky.Diagnostics;
+using System;
 
 public partial class Main : Node2D {
     protected Bilge b;
     private PackedScene ballScene;
+    private PackedScene boxScene;
     protected Controller ctrl;
+
+    protected int boxCount = 0;
 
     public override void _Ready() {
         ballScene = ResourceLoader.Load<PackedScene>("res://Ball/ball.tscn");
+        boxScene = ResourceLoader.Load<PackedScene>("res://Boxes/box.tscn");
         ctrl = GetNode<Controller>("/root/Controller");
         b = ctrl.dt.CreateBilge("Main");
 
@@ -22,6 +27,11 @@ public partial class Main : Node2D {
         }
     }
     public override void _Process(double delta) {
+
+        var br = ctrl.BoxesRequired();
+        foreach (var b in br) {
+            SpawnBox(b);
+        }
 
         if (Input.IsActionPressed("ui_aimBall")) {
             var turret = GetNode<Sprite2D>("Player/Turret");
@@ -41,6 +51,15 @@ public partial class Main : Node2D {
             FireBall(direction);
 
         }
+
+    }
+
+    private void SpawnBox(BoxRequest b) {
+        var boxInstance = boxScene.Instantiate<Box>();
+        AddChild(boxInstance);
+        int xloc = 100 + Random.Shared.Next(400);
+        boxInstance.GlobalPosition = new Vector2(xloc, 200);
+        ctrl.BoxCreated();
 
     }
 

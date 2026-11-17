@@ -85,16 +85,21 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 #### C.1
 
-* Single block is placed on the screen, ball bounces off the block.
+* Single block is placed on the screen, ball bounces off the block. ✅
 
 #### C.2
 
-* Single block is placed on the screen, destroyed when hit by the ball.  Ball bounces off the block when it is there and not when it is not there.
+* Single block is placed on the screen, destroyed when hit by the ball.  Ball bounces off the block when it is there and not when it is not there. ✅
 
 #### C.3
 
 * Having all balls out of play makes another block / row of blocks appear
 * Block can only appear in a configurable top portion of the screen
+
+#### C.4
+
+* Grid system shows overall layout of the game zone.
+* Boxes occupy specific grid locations.
 
 
 
