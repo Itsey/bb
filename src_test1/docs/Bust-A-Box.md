@@ -30,6 +30,64 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 
 
+#### C4 Design Implementation
+
+1080x2340 Grid in Godot.
+
+15PX left and right wall, Grid made up of 50x30px blocks.  100px top buffer allows for wall and score or text.  Bottom buffer of 290 allows for cannon graphics, additional implementation details and other UI elements.
+
+Boxes arrive in the grid area in the top 40 rows.  The bottom 25 rows are the area which blocks descend into.  When there are no blocks in the bottom 25 rows more blocks arrive at the top rows, determined by how many rows are missing from the 40 level cut-off.  The cut-off point should be configurable to allow for playtesting.
+
+
+
+```
+                         TOTAL WIDTH = 1080 px
+
+              15 px           1050 px           15 px
+               WALL          PLAY AREA           WALL
+                |                 |                |
+                v                 v                v
+          +-----------+-----------------------+-----------+
+          |           |                       |           |
+          |           |    TOP PADDING        |           |
+          |           |       100 px          |           |
+          |           |                       |           |
+          +-----------+-----------------------+-----------+
+          |           |                       |           |
+          |           |  PLAY AREA / GRID     |           |
+          |           |                       |           |
+          |           |  Grid size:           |           |
+          |           |    1050 x 1950 px     |           |
+          |           |                       |           |
+          |   LEFT    |  Cell size:           |   RIGHT   |
+          |   WALL    |    50 x 30 px         |   WALL    |
+          |   15 px   |                       |   15 px   |   1950 px
+          |           |  Columns: 21          |           |
+          |           |  Rows:    65          |           |
+          |           |                       |           |
+          |           |  Total cells:         |           |
+          |           |    21 x 65 = 1365     |           |
+          |           |         ...           |           |
+          |           |       65 rows         |           |
+          +-----------+-----------------------+-----------+
+          |           |                       |           |
+          |           |    BOTTOM PADDING     |           |
+          |           |       290 px          |           |
+          |           |                       |           |
+          +-----------+-----------------------+-----------+
+
+                <------------- 1080 px -------------->
+
+                         TOTAL HEIGHT
+                            2340 px
+
+
+```
+
+
+
+
+
 ## Design Decisions
 
 🗺️ The ball should speed up if it has been in flight for more than a few seconds.  How long and how fast does that scale.
@@ -42,7 +100,7 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 🗺️ Lives how is lifetime management managed
 
-🗺️ Ugrade - tracer line, double barrels, backing blocks
+🗺️ Upgrade Options - tracer line, double barrels, backing blocks
 
 
 
@@ -109,6 +167,19 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 ## Dodge
 
 🎯 Blocks move downward.
+
+#### D.1
+
+* Configurable row height is set.  If there are no blocks below this height a single block is added to the top grid row.
+* Each time that there are no balls in play the whole grid shifts down by one.
+
+#### D.2
+
+* If a block descends below row 65, its game over.
+
+#### D.3
+
+* Blocks form a layout, leading to "interesting" levels and challenges.
 
 
 

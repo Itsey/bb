@@ -22,10 +22,8 @@ Controller="*uid://c3p1sksl24w2h"
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=1170
-window/size/window_width_override=360
-window/size/window_height_override=730
+window/size/viewport_width=1080
+window/size/viewport_height=2320
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 window/handheld/orientation=1
