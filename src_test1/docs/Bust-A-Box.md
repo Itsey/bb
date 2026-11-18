@@ -76,6 +76,7 @@ Using a pixel art space theme, which has neon colours and a clearly futuristic l
 
 * Tidy up textures on wall & turret.  ❌ Deferred due to tooling issues.
 * 🐞 SpriteSheet is not the way to go, redesign turret sprite to allow rotation. ✅
+* Turret should only be able to fire upwards ✅
 
 
 

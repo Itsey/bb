@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://daorqdw1iawvt"]
 
-[ext_resource type="Script" uid="uid://b8lhgik2uavq5" path="res://boxes/Box.cs" id="1_fxhmg"]
+[ext_resource type="Script" uid="uid://b8lhgik2uavq5" path="res://Boxes/Box.cs" id="1_fxhmg"]
 [ext_resource type="Texture2D" uid="uid://cae7lywhqkxuy" path="res://Assets/wallTile248x.png" id="2_fxhmg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5x8"]

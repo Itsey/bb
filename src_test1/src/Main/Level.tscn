@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cwvfg41vu1eb7" path="res://Assets/Background1.png" id="2_cdlyu"]
 [ext_resource type="PackedScene" uid="uid://q5k7sep6ky34" path="res://player/player.tscn" id="2_player"]
 
-[node name="Level" type="Node2D" unique_id=1903085700]
+[node name="Level" type="Node2D" unique_id=1903085700 node_paths=PackedStringArray("PlayerArea")]
 script = ExtResource("1_gta3m")
+PlayerArea = NodePath("Player")
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=857734266]
 texture = ExtResource("2_cdlyu")
@@ -17,4 +18,4 @@ position = Vector2(2, 0)
 
 [node name="Player" parent="." unique_id=1522736851 instance=ExtResource("2_player")]
 position = Vector2(290, 1132)
-rotation = 4.712389
+rotation = -1.5707964

@@ -4,11 +4,13 @@ using System;
 
 public partial class Main : Node2D {
     protected Bilge b;
+    private Sprite2D TurretSprite;
     private PackedScene ballScene;
     private PackedScene boxScene;
     protected Controller ctrl;
 
     protected int boxCount = 0;
+    [Export] private Player PlayerArea;
 
     public override void _Ready() {
         ballScene = ResourceLoader.Load<PackedScene>("res://Ball/ball.tscn");
@@ -16,6 +18,7 @@ public partial class Main : Node2D {
         ctrl = GetNode<Controller>("/root/Controller");
         b = ctrl.dt.CreateBilge("Main");
 
+        TurretSprite = PlayerArea.Turret; 
     }
 
     public override void _UnhandledInput(InputEvent @event) {
@@ -34,22 +37,22 @@ public partial class Main : Node2D {
         }
 
         if (Input.IsActionPressed("ui_aimBall")) {
-            var turret = GetNode<Sprite2D>("Player/Turret");
             b.Verbose.Log("Aiming");
             Vector2 mousePosition = GetGlobalMousePosition();
-            var ttarg = turret.GetAngleTo(mousePosition);
-            turret.Rotate(ttarg);
-            // Add for debugging.  b.Direct.Write($"[STAT][Direction]", $"{mousePosition.Angle()}");
+            Vector2 direction = mousePosition - TurretSprite.GlobalPosition;
+            if (direction != Vector2.Zero) {
+                var target = Vector2.Up.AngleTo(direction);
+                TurretSprite.GlobalRotation = -Mathf.Pi / 2
+                    + Mathf.Clamp(target, -Mathf.Pi / 2 + 0.2f, Mathf.Pi / 2 - 0.2f);
+            }
         }
 
         if (Input.IsActionJustReleased("ui_aimBall")) {
-            var turret = GetNode<Sprite2D>("Player/Turret");
             b.Verbose.Log("Aiming released");
-            Vector2 direction = Vector2.Right.Rotated(turret.GlobalRotation);
-            b.Info.Log($"fire control T:{Mathf.RadToDeg(turret.GlobalRotation).ToString()}[{turret.GlobalRotation}] B:{Mathf.RadToDeg(direction.Angle()).ToString()} [{direction.Angle()}]");
+            Vector2 direction = Vector2.Right.Rotated(TurretSprite.GlobalRotation);
+            b.Info.Log($"fire control T:{Mathf.RadToDeg(TurretSprite.GlobalRotation)}[{TurretSprite.GlobalRotation}] B:{Mathf.RadToDeg(direction.Angle()).ToString()} [{direction.Angle()}]");
 
             FireBall(direction);
-
         }
 
     }
@@ -65,13 +68,13 @@ public partial class Main : Node2D {
 
     private void FireBall(Vector2 mousePosition) {
         if (mousePosition == Vector2.Zero) {
-            mousePosition = new Vector2(1, -1);
+            mousePosition = Vector2.Right.Rotated(TurretSprite.GlobalRotation);
         }
 
         var ballInstance = ballScene.Instantiate<Ball>();
         AddChild(ballInstance);
 
-        var spawn = GetNode<Marker2D>("Player/Turret/LaunchPosition");
+        var spawn = PlayerArea.LaunchPosition;
 
 
         ballInstance.GlobalPosition = spawn.GlobalPosition;
