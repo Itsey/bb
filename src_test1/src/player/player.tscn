@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://q5k7sep6ky34"]
 
 [ext_resource type="Script" uid="uid://cc3qqc1h8v8wx" path="res://player/Player.cs" id="1_g1dw6"]
-[ext_resource type="Texture2D" uid="uid://brmmlsiihntob" path="res://Assets/cannon_100x_r.png" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://dn11pjybdkr4l" path="res://Assets/cannon_100x.png" id="2_rkbax"]
 
 [node name="Player" type="Area2D" unique_id=1522736851 node_paths=PackedStringArray("LaunchMarker", "TurretSprite")]
 script = ExtResource("1_g1dw6")
@@ -10,9 +10,9 @@ TurretSprite = NodePath("Turret")
 metadata/_edit_group_ = true
 
 [node name="Turret" type="Sprite2D" parent="." unique_id=2094793925]
-texture = ExtResource("1_rkbax")
+texture = ExtResource("2_rkbax")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
 
 [node name="LaunchPosition" type="Marker2D" parent="Turret" unique_id=1779749506]
-position = Vector2(28, 0)
+position = Vector2(0, -28)

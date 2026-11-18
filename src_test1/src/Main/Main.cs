@@ -42,14 +42,13 @@ public partial class Main : Node2D {
             Vector2 direction = mousePosition - TurretSprite.GlobalPosition;
             if (direction != Vector2.Zero) {
                 var target = Vector2.Up.AngleTo(direction);
-                TurretSprite.GlobalRotation = -Mathf.Pi / 2
-                    + Mathf.Clamp(target, -Mathf.Pi / 2 + 0.2f, Mathf.Pi / 2 - 0.2f);
+                TurretSprite.GlobalRotation = Mathf.Clamp(target, -Mathf.Pi / 2 + 0.2f, Mathf.Pi / 2 - 0.2f);
             }
         }
 
         if (Input.IsActionJustReleased("ui_aimBall")) {
             b.Verbose.Log("Aiming released");
-            Vector2 direction = Vector2.Right.Rotated(TurretSprite.GlobalRotation);
+            Vector2 direction = Vector2.Up.Rotated(TurretSprite.GlobalRotation);
             b.Info.Log($"fire control T:{Mathf.RadToDeg(TurretSprite.GlobalRotation)}[{TurretSprite.GlobalRotation}] B:{Mathf.RadToDeg(direction.Angle()).ToString()} [{direction.Angle()}]");
 
             FireBall(direction);
@@ -68,7 +67,7 @@ public partial class Main : Node2D {
 
     private void FireBall(Vector2 mousePosition) {
         if (mousePosition == Vector2.Zero) {
-            mousePosition = Vector2.Right.Rotated(TurretSprite.GlobalRotation);
+            mousePosition = Vector2.Up.Rotated(TurretSprite.GlobalRotation);
         }
 
         var ballInstance = ballScene.Instantiate<Ball>();
