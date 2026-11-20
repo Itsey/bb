@@ -6,10 +6,14 @@ public partial class Ball : CharacterBody2D {
     protected Controller ctrl;
 
     private const float Speed = 300.0f;
+    private const float VelocityMultiplier = 1.3f;
+    [Export] private Sprite2D BallSprite;
+    [Export] private Timer SpeedUpTimer;
 
     override public void _Ready() {
         ctrl = GetNode<Controller>("/root/Controller");
         b = ctrl.dt.CreateBilge("Ball");
+        SpeedUpTimer.Timeout += OnSpeedUpTimerTimeout;
     }
 
     public override void _Input(InputEvent @event) {
@@ -37,5 +41,11 @@ public partial class Ball : CharacterBody2D {
 
             Velocity = Velocity.Bounce(col.GetNormal());
         }
+    }
+
+    private void OnSpeedUpTimerTimeout()
+    {
+        Velocity *= VelocityMultiplier;
+        GD.Print($"Speeding up to {Velocity.Length()}");
     }
 }

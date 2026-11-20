@@ -5,8 +5,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ic5x8"]
 
-[node name="Ball" type="CharacterBody2D" unique_id=1907358628]
+[node name="Ball" type="CharacterBody2D" unique_id=1907358628 node_paths=PackedStringArray("BallSprite", "SpeedUpTimer")]
 script = ExtResource("1_65gad")
+BallSprite = NodePath("Sprite2D")
+SpeedUpTimer = NodePath("SpeedUpTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=874777205]
 scale = Vector2(0.3, 0.3)
@@ -15,3 +17,7 @@ texture = ExtResource("2_ngrkv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1349834081]
 scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_ic5x8")
+
+[node name="SpeedUpTimer" type="Timer" parent="." unique_id=241858364]
+wait_time = 2.0
+autostart = true

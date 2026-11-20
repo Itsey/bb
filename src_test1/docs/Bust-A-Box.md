@@ -136,6 +136,9 @@ Boxes arrive in the grid area in the top 40 rows.  The bottom 25 rows are the ar
 * 🐞 SpriteSheet is not the way to go, redesign turret sprite to allow rotation. ✅
 * Turret should only be able to fire upwards ✅
 
+#### B.5
+* Ball should speed up if it has been in flight for more than a few seconds. Currently sped up by 30% every 2sec. ✅
+
 
 
 ## Cricket
