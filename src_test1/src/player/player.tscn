@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q5k7sep6ky34"]
 
-[ext_resource type="Script" uid="uid://cc3qqc1h8v8wx" path="res://player/Player.cs" id="1_g1dw6"]
+[ext_resource type="Script" uid="uid://cc3qqc1h8v8wx" path="res://Player/Player.cs" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://dn11pjybdkr4l" path="res://Assets/cannon_100x.png" id="2_rkbax"]
 
 [node name="Player" type="Area2D" unique_id=1522736851 node_paths=PackedStringArray("LaunchMarker", "TurretSprite")]

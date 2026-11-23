@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c67bqtwf7suc8"
-path="res://.godot/imported/RawSilverBall_Large.png-db6e1e34080b3a97d9ea4cec31c106fd.ctex"
+path="res://.godot/imported/RawSilverBall_Large.png-8f0defa530cedb79e0c1389d70551def.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ball/RawSilverBall_Large.png"
-dest_files=["res://.godot/imported/RawSilverBall_Large.png-db6e1e34080b3a97d9ea4cec31c106fd.ctex"]
+source_file="res://Assets/RawSilverBall_Large.png"
+dest_files=["res://.godot/imported/RawSilverBall_Large.png-8f0defa530cedb79e0c1389d70551def.ctex"]
 
 [params]
 

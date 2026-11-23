@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsf2xnul2t1se"]
 
 [ext_resource type="Script" uid="uid://c08rf37er472" path="res://Ball/Ball.cs" id="1_65gad"]
-[ext_resource type="Texture2D" uid="uid://ckkevwfpikw2b" path="res://Ball/silverBall50x.png" id="2_ngrkv"]
+[ext_resource type="Texture2D" uid="uid://ckkevwfpikw2b" path="res://Assets/silverBall50x.png" id="2_ngrkv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ic5x8"]
 

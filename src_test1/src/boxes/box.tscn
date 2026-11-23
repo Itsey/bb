@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://daorqdw1iawvt"]
+[gd_scene format=3 uid="uid://616dwqh4d3fx"]
 
 [ext_resource type="Script" uid="uid://b8lhgik2uavq5" path="res://Boxes/Box.cs" id="1_fxhmg"]
 [ext_resource type="Texture2D" uid="uid://cae7lywhqkxuy" path="res://Assets/wallTile248x.png" id="2_fxhmg"]

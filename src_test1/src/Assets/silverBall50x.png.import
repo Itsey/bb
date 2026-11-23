@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvio7q0d02itl"
-path="res://.godot/imported/wallTile50x.png-f053a747cb9066658e351584eabbafe4.ctex"
+uid="uid://ckkevwfpikw2b"
+path="res://.godot/imported/silverBall50x.png-a179a44e2128e2e8f2b769523ea0e366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main/wallTile50x.png"
-dest_files=["res://.godot/imported/wallTile50x.png-f053a747cb9066658e351584eabbafe4.ctex"]
+source_file="res://Assets/silverBall50x.png"
+dest_files=["res://.godot/imported/silverBall50x.png-a179a44e2128e2e8f2b769523ea0e366.ctex"]
 
 [params]
 

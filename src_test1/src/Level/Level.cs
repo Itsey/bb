@@ -2,7 +2,7 @@ using Godot;
 using Plisky.Diagnostics;
 using System;
 
-public partial class Main : Node2D {
+public partial class Level : Node2D {
     protected Bilge b;
     private Sprite2D TurretSprite;
     private PackedScene ballScene;
@@ -13,8 +13,8 @@ public partial class Main : Node2D {
     [Export] private Player PlayerArea;
 
     public override void _Ready() {
-        ballScene = ResourceLoader.Load<PackedScene>("res://Ball/ball.tscn");
-        boxScene = ResourceLoader.Load<PackedScene>("res://Boxes/box.tscn");
+        ballScene = ResourceLoader.Load<PackedScene>("res://Ball/Ball.tscn");
+        boxScene = ResourceLoader.Load<PackedScene>("res://Boxes/Box.tscn");
         ctrl = GetNode<Controller>("/root/Controller");
         b = ctrl.dt.CreateBilge("Main");
 

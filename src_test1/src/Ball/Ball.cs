@@ -46,6 +46,6 @@ public partial class Ball : CharacterBody2D {
     private void OnSpeedUpTimerTimeout()
     {
         Velocity *= VelocityMultiplier;
-        GD.Print($"Speeding up to {Velocity.Length()}");
+        //GD.Print($"Speeding up to {Velocity.Length()}");
     }
 }
