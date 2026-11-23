@@ -2,17 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://cae7lywhqkxuy" path="res://Assets/wallTile248x.png" id="1_4j1q1"]
 [ext_resource type="Texture2D" uid="uid://dvio7q0d02itl" path="res://Assets/wallTile50x.png" id="1_skaqk"]
-[ext_resource type="Texture2D" uid="uid://bk0ovr8mybw5d" path="res://Assets/wr_1_25x2.png" id="3_a1iyp"]
 [ext_resource type="Texture2D" uid="uid://cruwn1r8qfc1" path="res://Assets/wl_1_25x2.png" id="4_emie4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5x8"]
-size = Vector2(565, 50)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp814"]
+normal = Vector2(0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_erhsa"]
-size = Vector2(15, 1105)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yn40"]
+normal = Vector2(1, 0)
+distance = 15.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5avn8"]
-size = Vector2(28.5, 1109.8359)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2v6fp"]
+normal = Vector2(-1, 0)
+distance = -1065.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86usu"]
 size = Vector2(1065, 20)
@@ -22,57 +23,54 @@ size = Vector2(1065, 20)
 [node name="perimeter" type="StaticBody2D" parent="." unique_id=1306970067]
 position = Vector2(0, 1)
 
+[node name="per_left_filler" type="Sprite2D" parent="perimeter" unique_id=2130257116]
+texture = ExtResource("4_emie4")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 15, 2340)
+
+[node name="per_right_filler" type="Sprite2D" parent="perimeter" unique_id=494079170]
+texture = ExtResource("4_emie4")
+centered = false
+offset = Vector2(1065, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 15, 2340)
+
 [node name="perimeter_top" type="Sprite2D" parent="perimeter" unique_id=71439957]
 texture_repeat = 2
-position = Vector2(270, 22)
 texture = ExtResource("1_4j1q1")
+centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 440, 36)
-
-[node name="per_tr" type="Sprite2D" parent="perimeter" unique_id=283858512]
-texture_repeat = 1
-position = Vector2(513, 26)
-scale = Vector2(1.074, 1)
-texture = ExtResource("1_skaqk")
-region_enabled = true
-region_rect = Rect2(0, 0, 50, 50)
+region_rect = Rect2(0, 0, 1080, 100)
 
 [node name="per_tl" type="Sprite2D" parent="perimeter" unique_id=440155762]
 texture_repeat = 2
-position = Vector2(25, 25)
+position = Vector2(980, 0)
 texture = ExtResource("1_skaqk")
+centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 50, 50)
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="per_tr" type="Sprite2D" parent="perimeter" unique_id=283858512]
+texture_repeat = 2
+texture = ExtResource("1_skaqk")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
 
 [node name="per_top_collision" type="CollisionShape2D" parent="perimeter" unique_id=557105982]
-position = Vector2(277, 26)
-shape = SubResource("RectangleShape2D_ic5x8")
+position = Vector2(0, 100)
+shape = SubResource("WorldBoundaryShape2D_pp814")
 
 [node name="per_left_collision" type="CollisionShape2D" parent="perimeter" unique_id=694689754]
-position = Vector2(25, 601.5)
-shape = SubResource("RectangleShape2D_erhsa")
+shape = SubResource("WorldBoundaryShape2D_0yn40")
+one_way_collision_direction = Vector2(0.70710677, 0.70710677)
 
 [node name="per_right_collision" type="CollisionShape2D" parent="perimeter" unique_id=1523291560]
-position = Vector2(529, 602.08203)
-shape = SubResource("RectangleShape2D_5avn8")
-
-[node name="per_right_filler" type="Sprite2D" parent="perimeter" unique_id=501171026]
-texture_repeat = 2
-position = Vector2(527, 601)
-texture = ExtResource("3_a1iyp")
-region_enabled = true
-region_rect = Rect2(0, 0, 23.695, 1100)
-
-[node name="per_left_filler" type="Sprite2D" parent="perimeter" unique_id=2130257116]
-position = Vector2(14, 602)
-texture = ExtResource("4_emie4")
-region_enabled = true
-region_rect = Rect2(0, 0, 25, 1100)
-
-[node name="per_top_filler" type="Sprite2D" parent="perimeter" unique_id=4392198]
+shape = SubResource("WorldBoundaryShape2D_2v6fp")
 
 [node name="baseline" type="StaticBody2D" parent="." unique_id=1615807008]
 
 [node name="baseline_collision" type="CollisionShape2D" parent="baseline" unique_id=1640969008]
-position = Vector2(322, 1168)
+position = Vector2(546, 2337)
 shape = SubResource("RectangleShape2D_86usu")

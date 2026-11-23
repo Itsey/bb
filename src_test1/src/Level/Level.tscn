@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cr34tu2l55k6i" path="res://Level/Level.cs" id="1_gta3m"]
 [ext_resource type="PackedScene" uid="uid://djr3wqqpjw47p" path="res://Level/Perimeter.tscn" id="2_5trdm"]
-[ext_resource type="Texture2D" uid="uid://cwvfg41vu1eb7" path="res://Assets/Background1.png" id="2_cdlyu"]
+[ext_resource type="Texture2D" uid="uid://cr5uevup54gvd" path="res://Assets/Background.png" id="2_i5eh5"]
 [ext_resource type="PackedScene" uid="uid://q5k7sep6ky34" path="res://Player/Player.tscn" id="2_player"]
 
 [node name="Level" type="Node2D" unique_id=1903085700 node_paths=PackedStringArray("PlayerArea")]
@@ -10,11 +10,12 @@ script = ExtResource("1_gta3m")
 PlayerArea = NodePath("Player")
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=857734266]
-texture = ExtResource("2_cdlyu")
+scale = Vector2(1.0419922, 1.5299479)
+texture = ExtResource("2_i5eh5")
 centered = false
 
 [node name="Perimeter" parent="." unique_id=428894170 instance=ExtResource("2_5trdm")]
 position = Vector2(2, 0)
 
 [node name="Player" parent="." unique_id=1522736851 instance=ExtResource("2_player")]
-position = Vector2(290, 1132)
+position = Vector2(540, 2275)
