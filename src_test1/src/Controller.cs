@@ -1,6 +1,3 @@
-using Godot;
-using Plisky.Diagnostics;
-
 public partial class Controller : Node {
     protected Bilge b;
     public DynamicTrace dt = new DynamicTrace();

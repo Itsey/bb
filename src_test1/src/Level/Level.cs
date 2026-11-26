@@ -1,8 +1,5 @@
-using Godot;
-using Plisky.Diagnostics;
-using System;
-
-public partial class Level : Node2D {
+public partial class Level : Node2D
+{
     protected Bilge b;
     private Sprite2D TurretSprite;
     private PackedScene ballScene;
@@ -10,31 +7,32 @@ public partial class Level : Node2D {
     protected Controller ctrl;
 
     protected int boxCount = 0;
+    private bool isBallOnScreen;
     [Export] private Player PlayerArea;
 
-    public override void _Ready() {
+    public override void _Ready()
+    {
         ballScene = ResourceLoader.Load<PackedScene>("res://Ball/Ball.tscn");
         boxScene = ResourceLoader.Load<PackedScene>("res://Boxes/Box.tscn");
         ctrl = GetNode<Controller>("/root/Controller");
         b = ctrl.dt.CreateBilge("Main");
 
-        TurretSprite = PlayerArea.Turret; 
+        TurretSprite = PlayerArea.Turret;
+        SignalHub.Instance.OnBallExit += OnBallExit;
+        SpawnBox(new BoxRequest());
     }
 
-    public override void _UnhandledInput(InputEvent @event) {
+    public override void _UnhandledInput(InputEvent @event)
+    {
         base._UnhandledInput(@event);
 
-        if (@event.IsActionPressed("ui_launchBall")) {
+        if (@event.IsActionPressed("ui_launchBall") && !isBallOnScreen) {
             b.Info.Log("ball launch request recieved");
             FireBall(Vector2.Zero);
         }
     }
-    public override void _Process(double delta) {
-
-        var br = ctrl.BoxesRequired();
-        foreach (var b in br) {
-            SpawnBox(b);
-        }
+    public override void _Process(double delta)
+    {
 
         if (Input.IsActionPressed("ui_aimBall")) {
             b.Verbose.Log("Aiming");
@@ -46,17 +44,17 @@ public partial class Level : Node2D {
             }
         }
 
-        if (Input.IsActionJustReleased("ui_aimBall")) {
+        if (Input.IsActionJustReleased("ui_aimBall") && !isBallOnScreen) {
             b.Verbose.Log("Aiming released");
             Vector2 direction = Vector2.Up.Rotated(TurretSprite.GlobalRotation);
             b.Info.Log($"fire control T:{Mathf.RadToDeg(TurretSprite.GlobalRotation)}[{TurretSprite.GlobalRotation}] B:{Mathf.RadToDeg(direction.Angle()).ToString()} [{direction.Angle()}]");
 
             FireBall(direction);
         }
-
     }
 
-    private void SpawnBox(BoxRequest b) {
+    private void SpawnBox(BoxRequest b)
+    {
         var boxInstance = boxScene.Instantiate<Box>();
         AddChild(boxInstance);
         int xloc = 100 + Random.Shared.Next(400);
@@ -65,7 +63,8 @@ public partial class Level : Node2D {
 
     }
 
-    private void FireBall(Vector2 mousePosition) {
+    private void FireBall(Vector2 mousePosition)
+    {
         if (mousePosition == Vector2.Zero) {
             mousePosition = Vector2.Up.Rotated(TurretSprite.GlobalRotation);
         }
@@ -79,5 +78,20 @@ public partial class Level : Node2D {
         ballInstance.GlobalPosition = spawn.GlobalPosition;
         mousePosition = mousePosition.Normalized() * ctrl.Speed;
         ballInstance.Velocity = mousePosition;
+        isBallOnScreen = true;
+    }
+    private void OnBallExit()
+    {
+        foreach (var b in GetChildren())
+        {
+            if (b is Box box)
+                box.GlobalPosition += new Vector2(0, 100); // move down one step
+        }
+        var br = ctrl.BoxesRequired();
+        GD.Print("Boxes required: " + ctrl.BoxCount);
+        foreach (var b in br) {
+            SpawnBox(b);
+        }
+        isBallOnScreen = false;
     }
 }

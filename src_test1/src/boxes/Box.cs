@@ -1,6 +1,3 @@
-using Godot;
-using Plisky.Diagnostics;
-
 public partial class Box : CharacterBody2D {
     protected Bilge b;
     protected Controller ctrl;
@@ -22,4 +19,5 @@ public partial class Box : CharacterBody2D {
     }
     public override void _PhysicsProcess(double delta) {
     }
+
 }

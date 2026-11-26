@@ -174,7 +174,7 @@ Boxes arrive in the grid area in the top 40 rows.  The bottom 25 rows are the ar
 #### D.1
 
 * Configurable row height is set.  If there are no blocks below this height a single block is added to the top grid row.
-* Each time that there are no balls in play the whole grid shifts down by one.
+* Each time that there are no balls in play the whole grid shifts down by one.✅
 
 #### D.2
 
